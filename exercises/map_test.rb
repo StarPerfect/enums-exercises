@@ -34,10 +34,7 @@ class MapTest < Minitest::Test
 
   def test_normalize_zip_codes
     numbers = [234, 10, 9119, 38881]
-    zip_codes = numbers.map do |num|
-      zeros = 5 - num.to_s.length
-      '0' * zeros + "#{num}"
-    end
+    zip_codes = numbers.map {|num| num.to_s.rjust(5, '0')}
     assert_equal ["00234", "00010", "09119", "38881"], zip_codes
   end
 
