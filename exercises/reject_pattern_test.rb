@@ -59,23 +59,30 @@ class RejectPatternTest < Minitest::Test
   end
 
   def test_remove_words_containing_e
-    skip
     words = ["four", "red", "five", "blue", "pizza", "purple"]
-    # Your code goes here
+    selected = []
+    words.each do |word|
+      selected << word unless word.include?('e')
+    end
     assert_equal ["four", "pizza"], selected
   end
 
   def test_remove_dinosaurs
-    skip
     animals = ["tyrannosaurus", "narwhal", "eel", "achillesaurus", "qingxiusaurus"]
-    # Your code goes here
+    notasaurus = []
+    animals.each do |animal|
+      notasaurus << animal unless animal.include?('saurus')
+    end
     assert_equal ["narwhal", "eel"], notasaurus
   end
 
   def test_remove_numbers
     skip
     elements = ["cat", "dog", 23, 81.1, 56, "aimless", 43]
-    # Your code goes here
+    not_numbers = []
+    elements.each do |element|
+
+    end
     assert_equal ["cat", "dog", "aimless"], not_numbers
   end
 

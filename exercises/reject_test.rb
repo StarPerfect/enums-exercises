@@ -45,16 +45,14 @@ class RejectTest < Minitest::Test
   end
 
   def test_remove_words_containing_e
-    skip
     words = ["four", "red", "five", "blue", "pizza", "purple"]
-    # Your code goes here
+    selected = words.reject{ |word| word.include?('e') }
     assert_equal ["four", "pizza"], selected
   end
 
   def test_remove_dinosaurs
-    skip
     animals = ["tyrannosaurus", "narwhal", "eel", "achillesaurus", "qingxiusaurus"]
-    # Your code goes here
+    notasaurus = animals.reject{ |animal| animal.include?('saurus') }
     assert_equal ["narwhal", "eel"], notasaurus
   end
 
